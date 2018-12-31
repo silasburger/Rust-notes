@@ -52,5 +52,67 @@ fn main() {
 ```
 
 
+###Data Types
+Every value in Rust has a specific data type.
+
+Two important data type categories are *scalar* and *compound*.  
+
+Rust is statically typed so you must know the type of all variable at compile time. The compiler can sometimes infer the type based on the value, but in cases when multiple types are possible you must add an annotation. Example:
+
+```rust
+let guess: u32 = "42".parse().expect("Not a number");
+
+```
+
+###Scalar Types
+A single value. Not a complex data type. Rust has four primary scalar types:  
+- Integers
+- Floating point numbers
+- Booleans
+- characters
+
+###Integer Types
+A number without a fractional component. Example integer type declaration:
+
+```rust
+let num: i32 = 23;
+```
+
+The number dictates how many bits the integer takes up. The letter indicates if the integer is signed or unsigned ( i = signed, u = unsigned ). Unsigned values are always positive while signed types can be negative. Unsigned don't need a positive or negative sign. Signed values need a positive or negative sign.  
+
+`Each signed variant can store numbers from -(2^(n - 1)) to 2^(n - 1) - 1 inclusive, where n is the number of bits that variant uses.`
+
+i8 = -(2^7) to 2^7-1 OR -128 - 127
+
+`Unsigned variants can store numbers from 0 to (2^n) - 1`
+
+u8 = 0 to (2^8)-1 or 255  
+
+
+isize and usize change depending on the computer that is running. 32 bit if you are using a 32 bit architecture and 64 if you are using a 64 bit architecture.
+
+i32 is the default for integers.
+
+###Integer Overflow
+If you go over the specified type, this is called Integer Overflow. In debug mode this will trigger a *panic* (an error in compile mode). When compiling a release build rust will do *"twos complement wrapping"*. If you assign 256 to a u8 (max 255) then it will become 0, 257 will become 1, 258 will become 2, etc. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
