@@ -16,7 +16,7 @@ $ cargo build
 Run this command to run the built project...
 
 ```bash
-$ cargo ./target/debug/name_of_project
+$ ./target/debug/name_of_project
 ```
 
 or do both of these at the same time (done at root).
